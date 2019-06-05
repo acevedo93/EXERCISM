@@ -1,18 +1,17 @@
 class HighScores
-  def initialize scors
-    @scores = scors;
+  attr_reader :scores
+  def initialize scores
+    @scores = scores;
   end
-  def scores
-    return @scores
-  end
+
   def latest
     @scores.delete(0) 
-    return @scores.min
+    scores.min
   end
   def personal_best
-    return @scores.max
+    scores.max
   end
   def personal_top_three
-    return @scores.sort.reverse.first(3)
+    scores.max(3)
   end
 end
