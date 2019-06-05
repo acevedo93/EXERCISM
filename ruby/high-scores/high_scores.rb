@@ -3,10 +3,8 @@ class HighScores
   def initialize scores
     @scores = scores;
   end
-
   def latest
-    @scores.delete(0) 
-    scores.min
+    scores.last
   end
   def personal_best
     scores.max
